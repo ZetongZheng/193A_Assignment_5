@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fancify Shamcify</title>
+
+    <!-- link to your script file here -->
+    <script src="fancifymytext.js"></script>
+    <script>
+        function makeBigger() {
+            var textArea = document.querySelector('textarea');
+            textArea.style.fontSize = '24pt';
+        }
+
+        function changeStyle(radioButton) {
+            var textArea = document.querySelector('textarea');
+
+            if (radioButton.value === 'fancy') {
+                textArea.style.fontWeight = 'bold';
+                textArea.style.color = 'blue';
+                textArea.style.textDecoration = 'underline';
+            } else if (radioButton.value === 'boring') {
+                textArea.style.fontWeight = 'normal';
+                textArea.style.color = 'black'; // Change to the default color
+                textArea.style.textDecoration = 'none'; // Remove underline
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Fancify my Text</h1>
+
+    <button id="biggerButton">Bigger</button>
+
+    <!-- Text field -->
+    <fieldset>
+        <legend>Text</legend>
+        <textarea rows="4" cols="30"></textarea>
+    </fieldset>
+
+    <!-- Fancify field -->
+    <fieldset>
+        <legend>Fancify</legend>
+        <button onclick="makeBigger()">Bigger!</button>
+        <input type="radio" id="fancy" name="style" value="fancy" onclick="changeStyle(this)">
+        <label for="fancy">FancyShmancy</label>
+        <input type="radio" id="boring" name="style" value="boring" onclick="changeStyle(this)">
+        <label for="boring">BoringBetty</label>
+    </fieldset>
+
+    <!-- Moo button -->
+    <button onclick="toUpperCaseAndMoo()">Moo</button>
+
+</body>
+</html>
